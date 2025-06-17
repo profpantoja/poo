@@ -3,7 +3,20 @@ import pets.Calopsita;
 import pets.Prontuario;
 import pets.Tutor;
 import pets.Veterinario;
-
+/**
+ * Classe MyApp é a classe principal do aplicativo de gerenciamento de pets.
+ * Ela instancia tutores, veterinários e pets, realiza adoções, consultas e exibe informações.
+ * Funcionalidades demonstradas:
+ * <ul>
+ *   <li>Criação de instâncias de {@code Tutor}, {@code Veterinario}, {@code Cachorro}, {@code Calopsita} e {@code Prontuario}</li>
+ *   <li>Adoção de pets pelos tutores</li>
+ *   <li>Realização de uma consulta veterinária</li>
+ *   <li>Execução de comportamentos específicos dos pets (latir, piar)</li>
+ * </ul>
+ * 
+ * @author João Victor Tavares Fróes
+ * @version 1.0
+ */
 public class MyApp {
 
     @SuppressWarnings("unused")
