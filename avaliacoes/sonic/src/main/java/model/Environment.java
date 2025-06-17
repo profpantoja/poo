@@ -164,5 +164,9 @@ public class Environment {
     public void showPanel(){
         System.out.println("______________________\n\n" + "Level: " + this.name + " | Score: " + this.score + " | Time: " + this.time + " | Rings: " + this.qtdRings + "\n______________________");
     }
-
+   
+    // adicionado para realizar o teste dos personagens com as moedas
+    public int getQtdRings() {
+        return qtdRings;
+    }
 }
