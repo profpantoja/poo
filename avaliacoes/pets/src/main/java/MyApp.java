@@ -1,4 +1,5 @@
 import pets.Cachorro;
+import pets.CachorroTest;
 import pets.Calopsita;
 import pets.Prontuario;
 import pets.Tutor;
