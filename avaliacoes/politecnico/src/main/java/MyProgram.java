@@ -1,3 +1,6 @@
+/**
+* Importação de bibliotecas e classes
+*/
 import java.util.ArrayList;
 
 import model.Aluno;
@@ -8,8 +11,14 @@ import model.Grade;
 import model.Politecnico;
 import model.Professor;
 
-public class MyProgram {
+/**
+* @author Melissa Jaquet
+*/
 
+public class MyProgram {
+/**
+* Método principal responsável por inicializar e executar a simulação do sistema educacional
+*/
     public static void main(String[] args) {
 
         ArrayList<Curso> cursosPPorto = new ArrayList<Curso>();
@@ -169,3 +178,4 @@ public class MyProgram {
 
     }
 }
+
