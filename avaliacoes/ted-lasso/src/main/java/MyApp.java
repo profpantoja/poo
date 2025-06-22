@@ -1,6 +1,10 @@
 import model.Player;
 import model.Team;
 
+/**
+ * A classe Myapp define a aplicação para as classes e métodos criados do universo da série "Ted lasso"
+ * 
+ */
 public class MyApp {
     
     public static void main(String[] args){
