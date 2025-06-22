@@ -1,5 +1,11 @@
+/**
+ * Importação da biblioteca LocalDate.
+ */
 import java.time.LocalDate;
 
+/**
+ * Classe aonde é instanciado todos os objetos do programa.
+ */
 public class MyProgram {
     
     public static void main(String[] args) {
