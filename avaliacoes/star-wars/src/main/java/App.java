@@ -1,5 +1,8 @@
+/**
+ * Main Class that represents the application for the Star Wars universe.
+ */
 public class App {
-
+    
     public static void main(String[] args) {
 
         Pessoa p1 = new Pessoa();  
