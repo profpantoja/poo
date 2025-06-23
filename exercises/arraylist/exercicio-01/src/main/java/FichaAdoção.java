@@ -30,7 +30,7 @@ public class FichaAdoção {
     }
 
 
-    public static void visualizar_fichar(ArrayList<FichaAdoção> fa){
+    public static void visualizar_fichas(ArrayList<FichaAdoção> fa){
 
         for (int i = 0; i < fa.size();i++){
 
@@ -131,7 +131,7 @@ public class FichaAdoção {
         if (encontrado) {
             System.out.println("\nCao "+ nome + " encontrado no sistema!");
         } else {
-            System.out.println("\nCao "+ nome + "não encontrado no sistema!");
+            System.out.println("\nCao "+ nome + " não encontrado no sistema!");
         }
 
     }

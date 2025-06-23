@@ -7,7 +7,7 @@ public class MainCãoNino {
 
     Cão cão1 = new Cão("Kate",LocalDate.of(2009,06,12),Raça.VIRA_LATA,"Preta",35f);
     Cão cão2 = new Cão("Bob",LocalDate.of(2010,10,9),Raça.BULLDOG,"Preta",22f);
-    Cão cão3 = new Cão("Pitty",LocalDate.of(2008,11,9),Raça.PITBULL,"Branca",38f);
+    Cão cão3 = new Cão("Pitty",LocalDate.of(2007,03,2),Raça.PITBULL,"Branca",38f);
     Cão cão4 = new Cão("Kelly",LocalDate.of(2001,05,8),Raça.LABRADOR,"Amarela",36f);
     Cão cão5 = new Cão("Peixe",LocalDate.of(2008,11,9),Raça.VIRA_LATA,"Amarela",20f);
     Cão cão6 = new Cão("Grazi",LocalDate.of(2012,12,12),Raça.PASTOR_ALEMAO,"Amarela",18f);
@@ -38,7 +38,7 @@ public class MainCãoNino {
     System.out.println("\nQuantidade de caes no sistema: " + Cão.getQtd());
     System.out.println("Quantidade de adoçoes: " + FichaAdoção.getQtd() + "\n");
 
-    FichaAdoção.visualizar_fichar(adoções);
+    FichaAdoção.visualizar_fichas(adoções);
     FichaAdoção.buscar_cao("Kate", adoções);
     FichaAdoção.cao_mais_antigo(adoções);
     FichaAdoção.qtd_viralata_adotados(adoções);
