@@ -3,6 +3,30 @@
 title: The-Gym
 ---
 classDiagram
+
+    Funcionario --|> Pessoa
+    Aluno --|> Pessoa
+    Treinador --|> Funcionario
+
+    Pessoa --> "1" Endereco
+    Pessoa --> "1" Genero
+    Pessoa --> "*" Documento
+    Pessoa --> "*" Contato
+
+    Aluno --> "1" Plano
+    Assinatura --> "1" Plano
+    Assinatura --> "1" Aluno
+
+    Avaliacao --> "1" Aluno
+    Avaliacao --> "1" Treinador
+
+    Academia --> "*" Aluno
+    Academia --> "*" Funcionario
+    Academia --> "*" Treinador
+    Academia --> "*" Documento
+    Academia --> "*" Contato
+    Academia --> "1" Genero
+
     class Pessoa {
         +String nome
         +Endereco endereco
@@ -92,29 +116,4 @@ classDiagram
         +void listarFuncionarios()
         +void gerarRelatorioMensal()
     }
-
-
-    Funcionario --|> Pessoa
-    Aluno --|> Pessoa
-    Treinador --|> Funcionario
-
-    Pessoa --> "1" Endereco
-    Pessoa --> "1" Genero
-    Pessoa --> "*" Documento
-    Pessoa --> "*" Contato
-
-    Aluno --> "1" Plano
-    Assinatura --> "1" Plano
-    Assinatura --> "1" Aluno
-
-    Avaliacao --> "1" Aluno
-    Avaliacao --> "1" Treinador
-
-    Academia --> "*" Aluno
-    Academia --> "*" Funcionario
-    Academia --> "*" Treinador
-    Academia --> "*" Documento
-    Academia --> "*" Contato
-    Academia --> "1" Genero
-
 ```
