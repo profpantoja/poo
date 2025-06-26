@@ -1,4 +1,4 @@
-# Diagrama UML - Sistema de Gerenciamento de Pets
+# Diagrama UML - Avaliação Pets
 Este repositório contém a modelagem UML em MarkDown referente à avaliação Pets.
 
 ## Classe PESSOA
