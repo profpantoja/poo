@@ -1,3 +1,8 @@
+
+/**
+ * A classe MainVeiculo define a aplicação para as classes e métodos criados.
+ * 
+ */
 public class MainVeiculo {
 
     public static void main(String[] args) {
