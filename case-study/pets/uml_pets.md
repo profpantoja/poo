@@ -49,3 +49,4 @@ classDiagram
     TUTOR "1" o-- "0..*" PET : pets
     VETERINARIO "1" -- "0..*" PRONTUARIO : veterinario
     PET "1" -- "1" PRONTUARIO
+
