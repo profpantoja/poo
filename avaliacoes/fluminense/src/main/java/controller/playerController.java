@@ -1,15 +1,15 @@
 package controller;
 
-import dao.matchDAO;
-import model.Match;
-import view.matchView;
+import dao.playerDAO;
+import model.Player;
+import view.playerView;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class matchController {
-    private final matchView view = new matchView();
+public class playerController {
+    private final playerView view = new playerView();
 
     public void executar() {
         int opcao;
@@ -36,23 +36,22 @@ public class matchController {
     }
 
     private void criar() {
-        String teamA = view.lerCampo("Time A: ");
-        String teamB = view.lerCampo("Time B: ");
-        String data = view.lerCampo("Data: ");
+        String nome = view.lerCampo("Nome do jogador: ");
+        String posicao = view.lerCampo("Posição: ");
         try {
-            matchDAO.salvar(new Match(teamA, teamB, data));
-            view.exibirMensagem("Partida salva!");
+            playerDAO.salvar(new Player(nome, posicao));
+            view.exibirMensagem("Jogador salvo!");
         } catch (IOException e) {
-            view.exibirMensagem("Erro ao salvar partida.");
+            view.exibirMensagem("Erro ao salvar jogador.");
         }
     }
 
     private void listar() {
         try {
-            List<Match> lista = matchDAO.listar();
+            List<Player> lista = playerDAO.listar();
             List<String> textos = new ArrayList<>();
-            for (Match m : lista) {
-                textos.add(m.getTeamA() + " x " + m.getTeamB() + " - Data: " + m.getData());
+            for (Player p : lista) {
+                textos.add(p.getNome() + " - " + p.getPosicao());
             }
             view.exibirLista(textos);
         } catch (IOException e) {
@@ -61,14 +60,13 @@ public class matchController {
     }
 
     private void deletar() {
-        String teamA = view.lerCampo("Time A: ");
-        String teamB = view.lerCampo("Time B: ");
-        String data = view.lerCampo("Data: ");
+        String nome = view.lerCampo("Nome do jogador: ");
+        String posicao = view.lerCampo("Posição: ");
         try {
-            boolean ok = matchDAO.deletar(teamA, teamB, data);
-            view.exibirMensagem(ok ? "Partida deletada." : "Partida não encontrada.");
+            boolean ok = playerDAO.deletar(nome, posicao);
+            view.exibirMensagem(ok ? "Jogador deletado." : "Jogador não encontrado.");
         } catch (IOException e) {
-            view.exibirMensagem("Erro ao deletar partida.");
+            view.exibirMensagem("Erro ao deletar jogador.");
         }
     }
 }
