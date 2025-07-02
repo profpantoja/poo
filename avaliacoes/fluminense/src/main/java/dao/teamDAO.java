@@ -1,21 +1,21 @@
 package dao;
 
-import model.Club;
+import model.Team;
 import java.io.*;
 import java.util.*;
 
-public class clubDAO {
-    private static final String DB_PATH = "db/clubes.txt";
+public class teamDAO {
+    private static final String DB_PATH = "db/teams.txt";
 
-    public static void salvar(Club clube) throws IOException {
+    public static void salvar(Team t) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(DB_PATH, true));
-        bw.write(clube.toString());
+        bw.write(t.toString());
         bw.newLine();
         bw.close();
     }
 
-    public static List<Club> listar() throws IOException {
-        List<Club> lista = new ArrayList<>();
+    public static List<Team> listar() throws IOException {
+        List<Team> lista = new ArrayList<>();
         File file = new File(DB_PATH);
         if (!file.exists()) return lista;
 
@@ -24,21 +24,21 @@ public class clubDAO {
         while ((linha = br.readLine()) != null) {
             String[] partes = linha.split(",");
             if (partes.length == 2) {
-                lista.add(new Club(partes[0], partes[1]));
+                lista.add(new Team(partes[0], partes[1]));
             }
         }
         br.close();
         return lista;
     }
 
-    public static boolean deletar(String nome, String cidade) throws IOException {
-        List<Club> lista = listar();
-        boolean removido = lista.removeIf(c -> c.getNome().equals(nome) && c.getCidade().equals(cidade));
+    public static boolean deletar(String nome, String tecnico) throws IOException {
+        List<Team> lista = listar();
+        boolean removido = lista.removeIf(t -> t.getNome().equals(nome) && t.getTecnico().equals(tecnico));
 
         if (removido) {
             BufferedWriter bw = new BufferedWriter(new FileWriter(DB_PATH));
-            for (Club c : lista) {
-                bw.write(c.toString());
+            for (Team t : lista) {
+                bw.write(t.toString());
                 bw.newLine();
             }
             bw.close();
