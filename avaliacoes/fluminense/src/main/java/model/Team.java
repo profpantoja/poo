@@ -1,35 +1,23 @@
 package model;
 
-import java.util.ArrayList;
-
 public class Team {
+    private String nome, tecnico;
 
-    private String name;
-    private String colors;
-    private ArrayList<Player> players = new ArrayList<Player>();
-
-    public String getName() {
-        return name;
+    public Team(String nome, String tecnico) {
+        this.nome = nome;
+        this.tecnico = tecnico;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getNome() {
+        return nome;
     }
 
-    public String getColors() {
-        return colors;
+    public String getTecnico() {
+        return tecnico;
     }
 
-    public void setColors(String colors) {
-        this.colors = colors;
+    @Override
+    public String toString() {
+        return nome + "," + tecnico;
     }
-
-    public ArrayList<Player> getPlayers() {
-        return players;
-    }
-
-    public void setPlayers(ArrayList<Player> players) {
-        this.players = players;
-    }
-    
 }

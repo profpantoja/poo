@@ -1,42 +1,23 @@
 package model;
 
 public class Player {
+    private String nome, posicao;
 
-    private String name;
-    private String surname;
-    private int number;
-    private String position;
-    
-    public String getPosition() {
-        return position;
+    public Player(String nome, String posicao) {
+        this.nome = nome;
+        this.posicao = posicao;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public String getNome() {
+        return nome;
     }
 
-    public String getName() {
-        return name;
+    public String getPosicao() {
+        return posicao;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public String toString() {
+        return nome + "," + posicao;
     }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-    
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
 }
