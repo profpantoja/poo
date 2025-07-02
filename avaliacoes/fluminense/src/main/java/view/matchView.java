@@ -2,14 +2,14 @@ package view;
 
 import java.util.*;
 
-public class clubView {
+public class matchView {
     private final Scanner scanner = new Scanner(System.in);
 
     public int menu() {
-        System.out.println("\n--- Clube ---");
-        System.out.println("1 - Criar Clube");
-        System.out.println("2 - Listar Clubes");
-        System.out.println("3 - Deletar Clube");
+        System.out.println("\n--- Partida ---");
+        System.out.println("1 - Criar Partida");
+        System.out.println("2 - Listar Partidas");
+        System.out.println("3 - Deletar Partida");
         System.out.println("0 - Voltar");
         System.out.print("Escolha: ");
         return scanner.nextInt();
@@ -22,7 +22,7 @@ public class clubView {
     }
 
     public void exibirLista(List<String> dados) {
-        if (dados.isEmpty()) System.out.println("Nenhum registro.");
+        if (dados.isEmpty()) System.out.println("Nenhuma partida.");
         else dados.forEach(d -> System.out.println("- " + d));
     }
 
