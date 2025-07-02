@@ -36,7 +36,9 @@ public class clubController {
             clubDAO.salvar(new Club(nome, cidade));
             view.exibirMensagem("Clube salvo!");
         } catch (IOException e) {
-            view.exibirMensagem("Erro ao salvar.");
+            e.printStackTrace(); 
+             view.exibirMensagem("Erro ao salvar: " + e.getMessage());
+    
         }
     }
 
