@@ -1,0 +1,4 @@
+flamengo,rj
+botafogo,rj
+vasco,rj
+fluminense,rj

@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.*;
 
 public class matchDAO {
-    private static final String DB_PATH = "db/matches.txt";
+    private static final String DB_PATH = "C:/Users/Carlos Eduardo/Desktop/newREPO/java-exercicios/avaliacoes/fluminense/src/main/java/db/matches.txt";
 
     public static void salvar(Match m) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(DB_PATH, true));

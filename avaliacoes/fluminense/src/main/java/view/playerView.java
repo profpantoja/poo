@@ -12,12 +12,13 @@ public class playerView {
         System.out.println("3 - Deletar Jogador");
         System.out.println("0 - Voltar");
         System.out.print("Escolha: ");
-        return scanner.nextInt();
+        int op = scanner.nextInt();
+         scanner.nextLine();
+        return op;
     }
 
     public String lerCampo(String label) {
         System.out.print(label);
-        scanner.nextLine();
         return scanner.nextLine();
     }
 

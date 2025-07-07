@@ -6,7 +6,7 @@ import java.util.*;
 
 public class clubDAO {
 
-    private static final String DB_PATH = "db/clubs.txt";
+    private static final String DB_PATH = "C:/Users/Carlos Eduardo/Desktop/newREPO/java-exercicios/avaliacoes/fluminense/src/main/java/db/clubs.txt";
 
     public static void salvar(Club clube) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(DB_PATH, true));

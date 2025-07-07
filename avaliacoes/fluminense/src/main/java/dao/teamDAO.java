@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.*;
 
 public class teamDAO {
-    private static final String DB_PATH = "db/teams.txt";
+    private static final String DB_PATH = "C:/Users/Carlos Eduardo/Desktop/newREPO/java-exercicios/avaliacoes/fluminense/src/main/java/db/teams.txt";
 
     public static void salvar(Team t) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(DB_PATH, true));
