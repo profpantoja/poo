@@ -1,0 +1,5 @@
+Nome:viado
+Vida:69
+Imagem:dsadw
+PosX:3
+PosY:4

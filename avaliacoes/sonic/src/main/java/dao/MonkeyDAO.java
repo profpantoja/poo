@@ -8,9 +8,11 @@ import java.io.BufferedReader;
 
 public class MonkeyDAO {
 
+    private static final String arquivo_Macaco = "avaliacoes/sonic/src/main/java/db/";
+
     public File create(Monkey monkey) {
         try {
-            File file = new File(monkey.getName()+".txt");
+            File file = new File(arquivo_Macaco + monkey.getName()+".txt");
             if (file.createNewFile()) {
                 FileWriter writer = new FileWriter(file);
                 writer.write("Nome:" + monkey.getName() + "\n");
@@ -34,7 +36,7 @@ public class MonkeyDAO {
 
     public Monkey read(String monkeyName) {
         try {
-            File file = new File(monkeyName + ".txt");
+            File file = new File(arquivo_Macaco + monkeyName + ".txt");
 
             if (file.exists()) {
                 BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -74,7 +76,7 @@ public class MonkeyDAO {
 
     public void delete(String filename) {
         try {
-            File file = new File(filename + ".txt");
+            File file = new File(arquivo_Macaco + filename + ".txt");
             if (file.exists()) {
                 if (file.delete()) {
                     System.out.println("Macaco deletado: " + file.getName());

@@ -9,9 +9,12 @@ import model.Environment;
 
 public class EnvironmentDAO {
 
+    private static final String arquivo_Environment = "avaliacoes/sonic/src/main/java/db/";
+
+
     public File create(Environment environment) {
         try {
-            File file = new File(environment.getName() + ".txt");
+            File file = new File(arquivo_Environment + environment.getName() + ".txt");
             if (file.createNewFile()) {
                 FileWriter writer = new FileWriter(file);
                 writer.write("Name:" + environment.getName() + "\n");
@@ -37,7 +40,7 @@ public class EnvironmentDAO {
 
     public Environment read(String environmentName) {
         try {
-            File file = new File(environmentName + ".txt");
+            File file = new File(arquivo_Environment + environmentName + ".txt");
 
             if (file.exists()) {
                 BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -79,7 +82,7 @@ public class EnvironmentDAO {
 
     public void delete(String filename) {
         try {
-            File file = new File(filename + ".txt");
+            File file = new File(arquivo_Environment + filename + ".txt");
             if (file.exists()) {
                 if (file.delete()) {
                     System.out.println("Ambiente deletado: " + file.getName());
