@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ObjectDao {
-    private static final String FILE = "objects.txt";
+    private static final String FILE = "avaliacoes/sonic/src/main/java/db/objects.txt";
 
     public void create(Object o) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(FILE, true));
