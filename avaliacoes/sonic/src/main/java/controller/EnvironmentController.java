@@ -21,7 +21,7 @@ public class EnvironmentController {
     public void readEnvironment(String name) {
         Environment loadedEnvironment = dao.read(name);
         if (loadedEnvironment != null) {
-            System.out.println("Ambiente carregado: " + environment.getName());
+            System.out.println("Ambiente carregado: " + name);
             this.environment = loadedEnvironment;
         }
     }
@@ -47,10 +47,7 @@ public class EnvironmentController {
         System.out.print("Digite o tempo inicial: ");
         double time = sc.nextDouble();
 
-        System.out.print("Digite a quantidade inicial de rings: ");
-        int qtdRings = sc.nextInt();
-
-        Environment environment = new Environment(name, image, width, height, score, time, qtdRings);
+        Environment environment = new Environment(name, image, width, height, score, time, 0);
 
         File file = dao.create(environment);
 

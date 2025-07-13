@@ -12,7 +12,7 @@ import java.util.List;
 import model.Tails;
 
 public class TailsDAO {
-    private static final String arquivo_Tails = "avaliacoes/sonic/src/main/java/db";
+    private static final String arquivo_Tails = "avaliacoes/sonic/src/main/java/db/tails.txt";
 
     public void salvarTails(Tails tails) {
         try (BufferedWriter writerTails = new BufferedWriter(new FileWriter(arquivo_Tails, true))) {

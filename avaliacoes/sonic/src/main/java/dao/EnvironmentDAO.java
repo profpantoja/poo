@@ -23,8 +23,6 @@ public class EnvironmentDAO {
                 writer.write("Height:" + environment.getheight() + "\n");
                 writer.write("Score:" + environment.getScore() + "\n");
                 writer.write("Time:" + environment.getTime() + "\n");
-                writer.write("QTD Rings:" + environment.getQtdRings() + "\n");
-
                 writer.close();
                 System.out.println("\nAmbiente salvo com sucesso: " + environment.getName());
                 return file;
@@ -63,8 +61,6 @@ public class EnvironmentDAO {
                         score = Integer.parseInt(line.substring(6));
                     } else if (line.startsWith("Time:")) {
                         time = Double.parseDouble(line.substring(5));
-                    } else if (line.startsWith("QTD Rings:")) {
-                        qtdRings = Integer.parseInt(line.substring(10));
                     }
                 }
                 reader.close();
