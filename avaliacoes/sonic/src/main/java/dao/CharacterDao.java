@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CharacterDao {
-    private static final String FILE = "characters.txt";
+    private static final String FILE = "avaliacoes/sonic/src/main/java/db/characters.txt";
 
     public void create(Character personagem) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(FILE,true));
