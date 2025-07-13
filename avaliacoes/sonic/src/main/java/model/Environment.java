@@ -35,6 +35,11 @@ public class Environment {
         this.name = name;
     }
 
+    public int getQtdRings() {
+        return qtdRings;
+    }
+
+
     public String getImage() {
         return image;
     }
