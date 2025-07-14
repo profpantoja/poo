@@ -1,8 +1,8 @@
-import pets.Cachorro;
-import pets.Calopsita;
-import pets.Prontuario;
-import pets.Tutor;
-import pets.Veterinario;
+import model.Cachorro;
+import model.Calopsita;
+import model.Prontuario;
+import model.Tutor;
+import model.Veterinario;
 
 public class MyApp {
 
