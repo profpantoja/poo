@@ -1,45 +1,46 @@
+
+import java.util.Scanner;
+
+import assets.Menu;
+
+
 public class App {
-
     public static void main(String[] args) {
-
-        Pessoa p1 = new Pessoa();  
-        p1.setNome("Leia");
-        p1.setSobrenome("Organa");
-        p1.setSexo("Feminino");
-        p1.imprime();
-        Pessoa p2 = new Pessoa("Luke", "Skywalker", "Masculino");
-        p2.imprime();
-
-        Jedi obiwan = new Jedi("Obi-Wan", "Kenobi");
-        obiwan.imprime();
-        obiwan.mindControl();
-        obiwan.levitation();
-
-        Sith vader = new Sith("Darth", "Vader");
-        vader.imprime();
-        vader.mindControl();
-        vader.levitation();
-
-        Saber sabre1 = new Saber("azul", 0);
-        Saber sabre2 = new Saber("vermelho", 0);
-        Blast blast = new Blast("laser", 0);
-
-        obiwan.getWeapons().add(sabre1.pickUp());
-        vader.getWeapons().add(sabre2.pickUp());
-        obiwan.getWeapons().add(blast.pickUp());
-
-        for(Weapon s: vader.getWeapons()) {
-            if(s.getClass().getName().equals("Saber")) {
-                ((Saber) s).slash();
-            }
-        }
+        int decisao;
+        Scanner scanner = new Scanner(System.in);
+        boolean continuar = true;
         
-        for(Weapon s: obiwan.getWeapons()) {
-            if(s.getClass().getName().equals("Blast")) {
-                ((Blast) s).shot();
-                s.drop();
-            }
+        while(continuar){
+        System.out.println("Bem vindo ao Star Wars Manager!, escolha uma opção: \n[1] Jedi Manager\n[2] Sith Manager\n[3] Saber Manager\n[4] Blaster Manager");
+        decisao  = scanner.nextInt();
+        Menu menu = new Menu();
+
+        switch (decisao) {
+            case 1:
+                menu.StartMenuJedi();
+                break;
+            case 2:
+                menu.StartMenuSith();
+                break;
+            case 3:
+                menu.StartMenuSaber();
+                break;
+            case 4:
+                menu.StartMenuBlaster();
+                break;
+            case 5:
+                System.out.println("Saindo do Star Wars Manager...");
+                continuar = false;
+                break; 
+            default:
+                System.out.println("Opção inválida!");
         }
+    }
+        
+
+
+
     }
 
 }
+    
