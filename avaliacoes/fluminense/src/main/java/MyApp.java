@@ -1,39 +1,39 @@
-import java.util.ArrayList;
-import model.Player;
-import model.Team;
+import controller.clubController;
+import controller.playerController;
+import controller.teamController;
+import controller.matchController;
+
+import java.util.Scanner;
 
 public class MyApp {
-
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
 
-        Player german = new Player();
-        german.setName("German");
-        german.setSurname("Cano");
-        german.setNumber(14);
-        german.setPosition("atacante");
+        do {
+            System.out.println("\n==== MENU PRINCIPAL ====");
+            System.out.println("1 - Gerenciar Clubes");
+            System.out.println("2 - Gerenciar Jogadores");
+            System.out.println("3 - Gerenciar Times");
+            System.out.println("4 - Gerenciar Partidas");
+            System.out.println("0 - Sair");
+            System.out.print("Escolha: ");
+            opcao = scanner.nextInt();
 
-        Player john = new Player();
-        john.setName("John");
-        john.setSurname("Kennedy");
-        john.setNumber(9);
-        john.setPosition("atacante");
-
-        Player andre = new Player();
-        andre.setName("André");
-        andre.setSurname(null);
-        andre.setNumber(7);
-        andre.setPosition("meio-campo");
-
-        Team fluminense = new Team();
-        fluminense.setName("Fluminense");
-        fluminense.setColors("verde, grená e branca");
-        
-        ArrayList<Player> players = new ArrayList<Player>();
-        players.add(german);
-        players.add(john);
-        players.add(andre);
-        fluminense.setPlayers(players);
-
+            switch (opcao) {
+                case 1: new clubController().executar();
+                break;
+                case 2: new playerController().executar();
+                break;
+                case 3: new teamController().executar();
+                break;
+                case 4: new matchController().executar();
+                break;
+                case 0: System.out.println("Encerrando o sistema...");
+                break;
+                default: System.out.println("Opção inválida.");
+                break;
+            }
+        } while (opcao != 0);
     }
-    
 }

@@ -1,15 +1,15 @@
 package controller;
 
-import dao.matchDAO;
-import model.Match;
-import view.matchView;
+import dao.teamDAO;
+import model.Team;
+import view.teamView;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class matchController {
-    private final matchView view = new matchView();
+public class teamController {
+    private final teamView view = new teamView();
 
     public void executar() {
         int opcao;
@@ -36,23 +36,22 @@ public class matchController {
     }
 
     private void criar() {
-        String teamA = view.lerCampo("Time A: ");
-        String teamB = view.lerCampo("Time B: ");
-        String data = view.lerCampo("Data: ");
+        String nome = view.lerCampo("Nome do time: ");
+        String tecnico = view.lerCampo("Técnico: ");
         try {
-            matchDAO.salvar(new Match(teamA, teamB, data));
-            view.exibirMensagem("Partida salva!");
+            teamDAO.salvar(new Team(nome, tecnico));
+            view.exibirMensagem("Time salvo!");
         } catch (IOException e) {
-            view.exibirMensagem("Erro ao salvar partida.");
+            view.exibirMensagem("Erro ao salvar time.");
         }
     }
 
     private void listar() {
         try {
-            List<Match> lista = matchDAO.listar();
+            List<Team> lista = teamDAO.listar();
             List<String> textos = new ArrayList<>();
-            for (Match m : lista) {
-                textos.add(m.getTeamA() + " x " + m.getTeamB() + " - Data: " + m.getData());
+            for (Team t : lista) {
+                textos.add(t.getNome() + " - Técnico: " + t.getTecnico());
             }
             view.exibirLista(textos);
         } catch (IOException e) {
@@ -61,14 +60,13 @@ public class matchController {
     }
 
     private void deletar() {
-        String teamA = view.lerCampo("Time A: ");
-        String teamB = view.lerCampo("Time B: ");
-        String data = view.lerCampo("Data: ");
+        String nome = view.lerCampo("Nome do time: ");
+        String tecnico = view.lerCampo("Técnico: ");
         try {
-            boolean ok = matchDAO.deletar(teamA, teamB, data);
-            view.exibirMensagem(ok ? "Partida deletada." : "Partida não encontrada.");
+            boolean ok = teamDAO.deletar(nome, tecnico);
+            view.exibirMensagem(ok ? "Time deletado." : "Time não encontrado.");
         } catch (IOException e) {
-            view.exibirMensagem("Erro ao deletar partida.");
+            view.exibirMensagem("Erro ao deletar time.");
         }
     }
 }

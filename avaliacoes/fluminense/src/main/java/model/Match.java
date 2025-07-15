@@ -1,77 +1,26 @@
 package model;
 
-import java.util.Date;
-
 public class Match {
+    private String teamA, teamB, data;
 
-    private Team home;
-    private Team visitor;
-    private int homeScore;
-    private int visitorScore;
-    private Date date;
-    
-    public Team getHome() {
-        return home;
+    public Match(String teamA, String teamB, String data) {
+        this.teamA = teamA;
+        this.teamB = teamB;
+        this.data = data;
     }
 
-    public void setHome(Team home) {
-        this.home = home;
+    public String getTeamA() {
+        return teamA;
+    }
+    public String getTeamB() {
+        return teamB;
+    }
+    public String getData()  {
+        return data;
     }
 
-    public Team getVisitor() {
-        return visitor;
+    @Override
+    public String toString() {
+        return teamA + "," + teamB + "," + data;
     }
-
-    public void setVisitor(Team visitor) {
-        this.visitor = visitor;
-    }
-
-    public int getHomeScore() {
-        return homeScore;
-    }
-
-    public void setHomeScore(int homeScore) {
-        this.homeScore = homeScore;
-    }
-
-    public int getVisitorScore() {
-        return visitorScore;
-    }
-
-    public void setVisitorScore(int visitorScore) {
-        this.visitorScore = visitorScore;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Team getResult(){
-        if (homeScore < visitorScore)
-            return visitor;      
-        else {
-            if (homeScore > visitorScore)
-                return home;
-            else
-                return null;
-        }
-    }
-
-    public int getResult(Team t) {
-        if (t == home && homeScore > visitorScore)
-            return 3;
-        else if (t == visitor && homeScore < visitorScore)
-            return 3;
-        else if (t == home && homeScore < visitorScore)
-            return 0;
-        else if (t == visitor && homeScore > visitorScore)
-            return 0;
-        else 
-            return 1;
-    }
-    
 }
