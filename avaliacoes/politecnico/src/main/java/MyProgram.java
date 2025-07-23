@@ -8,9 +8,16 @@ import model.Grade;
 import model.Politecnico;
 import model.Professor;
 
+import view.Viewers;
+
+import controller.ProfessorController;
+
+
 public class MyProgram {
 
     public static void main(String[] args) {
+
+        Viewers view = new Viewers();
 
         ArrayList<Curso> cursosPPorto = new ArrayList<Curso>();
 
@@ -41,6 +48,16 @@ public class MyProgram {
         cursosPPorto.add(licenciaturaSistemasDeInformacaoParaGestao);
         cursosPPorto.add(licenciaturaSolicitadoria);
         cursosPPorto.add(licenciaturaSolicitadoriaPosLaboral);
+        
+        view.createCurso(licenciaturaCienciasEmpresariais);
+        view.createCurso(licenciaturaCienciasEmpresariaisPosLaboral);
+        view.createCurso(licenciaturaEngenhariaInfomatica);
+        view.createCurso(licenciaturaGesaoIndustrialLogistica);
+        view.createCurso(licenciaturaSegurancaDoTrabalhoEAmbiente);
+        view.createCurso(licenciaturaSegurancaInformaticaEmRedesDeComputadores);
+        view.createCurso(licenciaturaSistemasDeInformacaoParaGestao);
+        view.createCurso(licenciaturaSolicitadoria);
+        view.createCurso(licenciaturaSolicitadoriaPosLaboral);
 
         ArrayList<Disciplina> disciplinasGrade = new ArrayList<Disciplina>();
 
@@ -166,6 +183,6 @@ public class MyProgram {
         for (Disciplina d: aluno.getDisciplinasFaltantes()) {
             d.imprimirRequisitos();
         }
-
+      
     }
 }

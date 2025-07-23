@@ -13,6 +13,12 @@ public class Politecnico {
         this.cursos = new ArrayList<Curso>();
     }
 
+    public Politecnico(String nome) {
+    this.nome = nome;
+    this.url = "";
+    this.cursos = new ArrayList<>();
+}
+
     public String getNome() {
         return nome;
     }

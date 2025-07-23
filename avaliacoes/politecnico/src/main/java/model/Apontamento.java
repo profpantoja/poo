@@ -46,7 +46,12 @@ public class Apontamento {
     }
 
     public void imprimirRegistro(){
-        this.disciplina.imprimirRequisitos();
-        System.out.println("Nota: " + nota + " Status: " + status + " Data: " + data);
+        System.out.println("Apontamento:");
+        if (disciplina != null) {
+            disciplina.imprimirRequisitos();
+        } else {
+            System.out.println("Disciplina: N/A");
+        }
+        System.out.println("Nota: " + nota + " | Status: " + status + " | Data: " + data);
     }
 }

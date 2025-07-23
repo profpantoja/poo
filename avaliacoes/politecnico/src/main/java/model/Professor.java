@@ -6,19 +6,16 @@ public class Professor extends Pessoa {
     private int contrato;
     private Politecnico politecnico;
 
-    public Professor(String nome, String apelido, String numeroFiscal, int id, int contrato, Politecnico politecnico) {
+   public Professor(String nome, String apelido, String numeroFiscal, int id, int contrato, Politecnico politecnico) {
         super(nome, apelido, numeroFiscal);
         this.id = id;
         this.contrato = contrato;
         this.politecnico = politecnico;
     }
-
-    public Professor(String nome, String apelido, String numeroFiscal, int id, Double salario, int contrato, Politecnico politecnico) {
-        super(nome, apelido, numeroFiscal);
-        this.id = id;
-        this.salario = salario;
-        this.contrato = contrato;
-        this.politecnico = politecnico;
+       
+    
+    public void imprimirPessoa(){
+        System.out.println("Professor [Nome: " + getNome() + ", Apelido: " + getApelido() + ", NumeroFiscal: " + getNumeroFiscal() + ", ID: " + this.id + ", Salario: " + this.salario + "]");
     }
 
     public int getId() {
@@ -53,8 +50,4 @@ public class Professor extends Pessoa {
         this.politecnico = politecnico;
     }
 
-    public void imprimirPessoa(){
-        System.out.println("Professor [Nome: " + getNome() + ", Apelido: " + getApelido() + ", NumeroFiscal: " + getNumeroFiscal() + ", ID: " + this.id + ", Salario: " + this.salario + "]");
-    }
-    
 }

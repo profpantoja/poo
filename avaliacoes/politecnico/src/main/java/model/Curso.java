@@ -1,5 +1,7 @@
 package model;
 
+import dao.CursoDAO;
+
 public class Curso {
     private String nome;
     private String portaria;
@@ -27,5 +29,10 @@ public class Curso {
 
     public void imprimirInfo(){
         System.out.println("Curso [Nome: " + nome + " Portaria: " + portaria + "]");
+    }
+
+    public void create() {
+        CursoDAO cdao = new CursoDAO();
+        cdao.create(this);
     }
 }

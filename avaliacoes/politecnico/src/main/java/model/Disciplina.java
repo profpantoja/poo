@@ -12,7 +12,7 @@ public class Disciplina {
         this.nome = nome;
         this.periodo = periodo;
         this.ch = ch;
-        this.preRequisitos = new ArrayList<Disciplina>();
+        this.preRequisitos = new ArrayList<>();
     }
 
     public Disciplina(String nome, int ch, int periodo, ArrayList<Disciplina> preRequisitos) {
@@ -59,10 +59,12 @@ public class Disciplina {
     }
 
     public void imprimirRequisitos() {
-        System.out.println("Disciplina [Nome: " + this.nome + ", CH: " + this.ch + ", Periodo: " + this.periodo + "]");
-        for (Disciplina prereq : preRequisitos) {
+        System.out.println("Disciplina [Nome: " + nome + ", CH: " + ch + ", Periodo: " + periodo + "]");
+        if (!preRequisitos.isEmpty()) {
             System.out.println("Pré-requisitos:");
-            prereq.imprimirRequisitos();
+            for (Disciplina d : preRequisitos) {
+                System.out.println("- " + d.getNome());
+            }
         }
     }
 
