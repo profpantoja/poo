@@ -35,8 +35,6 @@ public class MyApp {
         System.out.println(tutor2.getInfo());
         System.out.println(prontuario.getInfo() + "\n");
 
-        // Chamar métodos específicos de cada pet
-        kate.latir();
-        bob.piar();
+        
     }
 }
