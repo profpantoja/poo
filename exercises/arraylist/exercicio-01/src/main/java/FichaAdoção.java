@@ -2,6 +2,9 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
+/**
+ * A classe FichaAdoção define uma representação de uma ficha de adoção de um cachorro presente no abrigo da ONG CãoNino.
+ */
 public class FichaAdoção {
 
     private Pessoa pessoa;
@@ -9,12 +12,30 @@ public class FichaAdoção {
     private LocalDate data_adoção;
     static int qtd = 0;
 
+    /**
+     * Construtor padrão da classe FichaAdoção.
+     * Instancia um cão e uma pessoa que estão presentes como atributos da ficha de adoção.
+     * Aumenta a quantidade de fichas de adoção.
+     * 
+     */
     public FichaAdoção() {
         this.cão = new Cão();
         this.pessoa = new Pessoa();
         qtd++;
     }
 
+    /**
+     * Construtor da classe FichaAdoção que recebe três parâmetros.
+     * Se data de adoção ocorreu depois da data de entrada do cão no abrigo,
+     * define os parâmetros recebidos, imprime na tela uma mensagem de adoção
+     * do cão pela pessoa e aumenta a quantidade de fichas de adoção, caso contrário,
+     * é imprimido na tela uma mensagem avisando que um cão não pode ser adotado em uma data
+     * anterior a sua data de entrada no abrigo.
+     * 
+     * @param pessoa Pessoa que adotou o cão
+     * @param cão Cão que foi adotado pela pessoa 
+     * @param data_adoção Data da adoção
+     */
     public FichaAdoção(Pessoa pessoa, Cão cão, LocalDate data_adoção) {
         boolean v = verificar_data(cão.getData_entrada(), data_adoção);
         if (v == true){
@@ -30,6 +51,14 @@ public class FichaAdoção {
     }
 
 
+    /**
+     * O método visualizar_fichar percorre a lista de fichas de adoção e imprime na tela 
+     * todas as fichas de adoção registradas com suas respectivas informações.
+     * 
+     * @param fa Lista de fichas de adoção
+     * @see Pessoa
+     * @see Cão
+     */
     public static void visualizar_fichar(ArrayList<FichaAdoção> fa){
 
         for (int i = 0; i < fa.size();i++){
@@ -49,6 +78,15 @@ public class FichaAdoção {
     }
 
 
+    /**
+     * O método verificar_data analisa se a data de adoção do cão
+     * é coerente com sua data de entrada no abrigo.
+     * 
+     * @param entrada Data de entrada do cão no abrigo
+     * @param adoção Data de adoção do cão
+     * @return verdadeiro se a data registrada indica que a adoção ocorreu na mesma data ou após o cão ter entrado no abrigo
+     *         e falso se a data registrada indica que a adoção aconteceu antes do cão ter entrado no abrigo.
+     */
     public static boolean verificar_data(LocalDate entrada, LocalDate adoção) {
 
         if (entrada.compareTo(adoção) <= 0) {
@@ -61,6 +99,13 @@ public class FichaAdoção {
     }
 
 
+    /**
+     * O método tempo_adotado imprime na tela o tempo de adoção
+     * de um cão, baseando-se nos anos, meses e/ou dias que se
+     * passaram desde então.
+     * 
+     * @param adoção Data de adoção do cão
+     */
     public static void tempo_adotado(LocalDate adoção) {
 
         LocalDate hoje = LocalDate.now();
@@ -86,6 +131,14 @@ public class FichaAdoção {
     }
     
 
+    /**
+     * O método tempo_ong imprime na tela o tempo de ong
+     * de um cão, baseando-se nos anos, meses e/ou dias que se
+     * passaram entre a data de entrada e a data de adoção.
+     * 
+     * @param entrada Data de entrada do cão no abrigo
+     * @param adoção Data de adoção do cão
+     */
     public static void tempo_ong(LocalDate entrada, LocalDate adoção) {
 
         long anos = entrada.until(adoção, ChronoUnit.YEARS);
@@ -107,6 +160,12 @@ public class FichaAdoção {
     }
 
 
+    /**
+     * O método nutricao imprime na tela o status de nutrição 
+     * do cão baseado em seu peso atual.
+     * 
+     * @param kg Peso do cão
+     */
     public static void nutricao(float kg){
         if (kg <= 20) {
             System.out.println("Status: desnutrido!");
@@ -119,6 +178,14 @@ public class FichaAdoção {
         }
     }
 
+    /**
+     * O método buscar_cao busca o nome de um cão em todos os registros
+     * de ficha de adoção presentes no sistema, imprimindo na tela o 
+     * resultado da busca.
+     * 
+     * @param nome Nome do cão
+     * @param adoções Lista de fichas de adoção
+     */
     public static void buscar_cao(String nome, ArrayList<FichaAdoção> adoções){
 
         boolean encontrado = false;
@@ -136,6 +203,13 @@ public class FichaAdoção {
 
     }
     
+    /**
+     * O método cao_mais_antigo percorre uma lista de fichas de adoção
+     * para encontrar o cachorro com a data de adoção mais antiga, após
+     * o encontrar, é imprimido na tela o resultado da busca.
+     * 
+     * @param adoções Lista de fichas de adoção
+     */
     public static void cao_mais_antigo(ArrayList<FichaAdoção> adoções){
 
         LocalDate data = LocalDate.now();
@@ -154,6 +228,13 @@ public class FichaAdoção {
     }
 
 
+    /**
+     * O método qtd_viralata_adotados percorre uma lista de fichas de adoção que aumenta
+     * em 1 num contador toda a vez que um cachorro vira-lata é encontrado, ao final
+     * do método é imprimido na tela o contador indicando a quantidade de vira-latas adotados.
+     * 
+     * @param adoções Lista de fichas de adoção
+     */
     public static void qtd_viralata_adotados(ArrayList<FichaAdoção> adoções){
 
         int qtd = 0;
@@ -168,25 +249,73 @@ public class FichaAdoção {
     }
 
 
+    /**
+     * Getter padrão para o atributo pessoa.
+     * Retorna a pessoa presente na ficha de adoção.
+     * 
+     * @return a pessoa presente na ficha de adoção
+     */
     public Pessoa getPessoa() {
         return pessoa;
     }
+    
+    
+    /**
+     * Setter padrão para o atributo pessoa.
+     * Define a pessoa presente na ficha de adoção.
+     * 
+     * @param pessoa Pessoa presente na ficha de adoção
+     */
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
     }
+    
+    /**
+     * Getter padrão para o atributo cão.
+     * Retorna o cão presente na ficha de adoção.
+     * 
+     * @return o cão presente na ficha de adoção
+     */
     public Cão getCão() {
         return cão;
     }
+    
+     /**
+     * Setter padrão para o atributo cão.
+     * Define o cão presente na ficha de adoção.
+     * 
+     * @param cão Cão presente na ficha de adoção
+     */
     public void setCão(Cão cão) {
         this.cão = cão;
     }
+    
+    /**
+     * Getter padrão para o atributo data_adoção.
+     * Retorna a data de adoção.
+     * 
+     * @return a data de adoção
+     */
     public LocalDate getData_adoção() {
         return data_adoção;
     }
+    
+     /**
+     * Setter padrão para o atributo data_adoção.
+     * Define data de adoção.
+     * 
+     * @param data_adoção Data de adoção
+     */
     public void setData_adoção(LocalDate data_adoção) {
         this.data_adoção = data_adoção;
     }
 
+    /**
+     * Getter padrão para o atributo qtd.
+     * Retorna a quantidade de fichas de adoção.
+     * 
+     * @return a quantidade de fichas de adoção
+     */
     public static int getQtd() {
         return qtd;
     }

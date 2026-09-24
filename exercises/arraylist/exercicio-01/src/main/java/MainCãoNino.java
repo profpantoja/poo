@@ -1,6 +1,10 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * A classe MainCãoNino define a aplicação para as classes e métodos criados.
+ * 
+ */
 public class MainCãoNino {
 
     public static void main(String[] args) {
