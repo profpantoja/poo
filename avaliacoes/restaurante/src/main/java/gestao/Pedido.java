@@ -2,7 +2,7 @@ package gestao;
 
 import java.util.ArrayList;
 
-public class Pedido{
+public class Pedido {
     private int numPedido;
     private double valTotal;
     private ArrayList<Item> itens;
@@ -14,31 +14,39 @@ public class Pedido{
         this.itens = new ArrayList<>();
         this.cliente = cliente;
         this.mesa = mesa;
-    }    
+    }
 
-    public void encerrar(){
+    public void encerrar() {
         System.out.println("\nNota fiscal salva. Encerrando sua conta...\n");
     }
 
-    public void pagar(int tipoPagamento){
+    public void pagar(int tipoPagamento) {
         System.out.println("Como deseja pagar:\n[1]Pix\n[2]Espécie\n[3]Cartão\n");
+
         switch (tipoPagamento) {
-            case 1 -> System.out.println("Pagamento por PIX selecionado.");
-            case 2 -> System.out.println("Pagamento por Espécie selecionado.");
-            case 3 -> System.out.println("Pagamento por Cartão selecionado.");
-            default -> System.out.println("Opção inválida");
+            case 1:
+                System.out.println("Pagamento por PIX selecionado.");
+                break;
+            case 2:
+                System.out.println("Pagamento por Espécie selecionado.");
+                break;
+            case 3:
+                System.out.println("Pagamento por Cartão selecionado.");
+                break;
+            default:
+                System.out.println("Opção inválida");
+                break;
         }
-        
+
     }
 
     public double valTotal() {
-        for(Item item : itens){
+        for (Item item : itens) {
             valTotal += (item.getValVenda() * item.getQtd()) * 1.23;
         }
         return valTotal;
     }
-    
-    
+
     public int getNumPedido() {
         return numPedido;
     }
