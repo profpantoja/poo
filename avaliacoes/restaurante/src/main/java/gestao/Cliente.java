@@ -12,7 +12,6 @@ public class Cliente extends Pessoa{
         return numFid;
     }
 
-    
     public void setNumFid(int numFid) {
         this.numFid = numFid;
     } 
