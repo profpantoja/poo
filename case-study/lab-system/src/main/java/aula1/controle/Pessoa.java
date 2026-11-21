@@ -14,43 +14,48 @@ public class Pessoa {
         this.altura = altura;
     }
 
+    // Método que descreve o papel no laboratório
+    public void exibirFuncao() {
+        System.out.println("Sou " + nome + ", usuário do laboratório.");
+    }
+
     public String getNome() {
         return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public float getAltura() {
-        return altura;
-    }
-
-    public void setAltura(float altura) {
-        this.altura = altura;
-    }
-
-    public double getPeso() {
-        return peso;
-    }
-
-    public void setPeso(double peso) {
-        this.peso = peso;
-    }
-
-    public String getDtNascimento() {
-        return dtNascimento;
-    }
-
-    public void setDtNascimento(String dtNascimento) {
-        this.dtNascimento = dtNascimento;
     }
 
     public String getUser() {
         return user;
     }
 
+    public String getDtNascimento() {
+        return dtNascimento;
+    }
+
+    public float getAltura() {
+        return altura;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public void setUser(String user) {
         this.user = user;
+    }
+
+    public void setDtNascimento(String dtNascimento) {
+        this.dtNascimento = dtNascimento;
+    }
+
+    public void setAltura(float altura) {
+        this.altura = altura;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
     }
 }
