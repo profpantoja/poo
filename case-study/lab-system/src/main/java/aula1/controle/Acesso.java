@@ -35,4 +35,20 @@ public class Acesso {
         this.pessoa = pessoa;
     }
 
+    // Sobrecarga de métodos
+    public void registrarSaida(String dataHoraSaida) {
+        this.dtSaida = dataHoraSaida;
+    }
+
+    public void registrarSaida() {
+        this.dtSaida = "Saída registrada automaticamente pelo sistema";
+    }
 }
+
+// Os atributos foram declarados como private e os métodos de aceso (getters e setter) como public. Isso mostra um bom entendimento prático sobre a visibilidade de atributos e métodos e encapsulamento.
+
+// O construtor Acesso(String dtEntrada, Pessoa pessoa) recebe os parâmetros corretamente e usa a palavra-chave this para diferenciar as variáveis da própria classe dos parâmetros recebidos
+
+// A declaração do pacote aula1.controle e a estrutura da classe e dos objetos estão nos padrões corretos da linguagem
+
+// Usar string para armazenar datas é perfeitamente aceitável e comum nessa fase inicial de aprendizado sobre variáveis. mas o correto para manipulação de tempo em java é o LocalDate
