@@ -1,5 +1,8 @@
 package aula1;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 
 import aula1.controle.Acesso;
@@ -7,20 +10,25 @@ import aula1.controle.Lab;
 import aula1.controle.Manutencao;
 import aula1.controle.Material;
 import aula1.controle.Pessoa;
+import aula1.repository.AcessoRepository;
+import aula1.repository.LabRepository;
+import aula1.repository.ManutencaoRepository;
+import aula1.repository.MaterialRepository;
+import aula1.repository.PessoaRepository;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         // Criando uma pessoa
-        Pessoa pessoa = new Pessoa("Maciel", "maciel123", 1.58f);
+        Pessoa pessoa = new Pessoa("henrique", "henrique", 1.58f);
 
         // Usando getters
         System.out.println("Usuário criado: " + pessoa.getUser());
 
         // Usando setters
-        pessoa.setDtNascimento("16/08/2006");
-        pessoa.setPeso(58.0f);
+        pessoa.setDtNascimento("02/01/2004");
+        pessoa.setPeso(65.0);
 
         // Criando um laboratório
         Lab labj203 = new Lab("203", "Laboratório para a disciplina de POO.", "J");
@@ -51,5 +59,17 @@ public class Main {
                 "Preventiva",
                 "Reparo em um dos equipamentos do laboratório j203",
                 "19/09/2026");
+
+        Path dados = Files.createTempDirectory("lab-system-");
+        new PessoaRepository(dados).salvar(pessoa);
+        new LabRepository(dados).salvar(labj203);
+        MaterialRepository materialRepository = new MaterialRepository(dados);
+        for (Material material : materiais) {
+            materialRepository.salvar(material);
+        }
+        new AcessoRepository(dados).salvar(acesso1);
+        new ManutencaoRepository(dados).salvar(manutencao);
+
+        System.out.println("Arquivos CSV gerados em " + dados.toAbsolutePath());
     }
 }
